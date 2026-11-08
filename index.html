@@ -237,6 +237,9 @@ input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--ink)
 .rs-g .slot img{object-position:50% 50%}
 @media(max-width:900px){.rs .wrap,.rs.flip .wrap{grid-template-columns:1fr}.rs.flip .rs-t{order:0}}
 
+/* photo frames pulse softly until their photo arrives */
+.slot:not(.on){animation:slp 1.8s ease-in-out infinite}
+@keyframes slp{50%{filter:brightness(1.35)}}
 /* Loading screen: shows at once, leaves when the page and photos are ready */
 #ld{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 90% at 50% 40%,#42041e 0,#300316 55%,#24020f 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;color:#fff;transition:opacity .7s ease,visibility .7s}
 #ld.out{opacity:0;visibility:hidden}
@@ -536,7 +539,8 @@ var ROOMS=[
     
     var im=new Image();im.alt=label;im.decoding='async';
     im.onload=function(){requestAnimationFrame(function(){box.classList.add('on')})};
-    im.onerror=function(){box.remove()};
+    var tries=0;
+    im.onerror=function(){tries++;if(tries>5){box.remove();return}setTimeout(function(){im.src=box.dataset.img+'?r='+tries},tries*1500)};
     box.appendChild(im);
     im.src=box.dataset.img;
   });
