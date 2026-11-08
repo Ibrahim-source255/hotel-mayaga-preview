@@ -5,332 +5,549 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Hotel Mayaga | Navrongo</title>
-<meta name="description" content="Hotel Mayaga, Tono Road, Navrongo: 35 rooms (fan, air-conditioned, executive and suites), an on-site restaurant, two conference halls, a courtyard for parties, Wi-Fi, 24-hour security and parking. Book on WhatsApp: 024 059 1813.">
+<meta name="description" content="Hotel Mayaga, Navrongo: 35 rooms from the Cottage House suite to Executive and Standard rooms, a bar and lounge, restaurant and two conference halls. Book on WhatsApp: 024 059 1813.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hotel Mayaga, Navrongo">
-<meta property="og:description" content="35 rooms, an on-site restaurant, two conference halls and a courtyard for parties. Book on WhatsApp: 024 059 1813.">
-<meta name="theme-color" content="#37482f">
+<meta property="og:description" content="35 air-conditioned rooms in Navrongo: Cottage House, Executive and Standard rooms. Inquire on WhatsApp: 024 059 1813.">
+<meta name="theme-color" content="#300316">
 <style>
-@font-face{font-family:"Playfair";src:url(fonts/playfair-display-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Playfair";src:url(fonts/playfair-display-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Playfair";src:url(fonts/playfair-display-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
-
-/* Direction: MontRural (mont-rural.emblematica.agency, Awwwards Honorable Mention, emblematica). Copied: olive canvas + cream paper, #37482f / #f8e8c5 / #443e2b / #cfa65a,
-   Playfair headings, tiny bold uppercase Arial tags in brackets "( what is inside )", a big capitals feature list with photos, rental-format rows, "additional services",
-   and a closing "awaits you" page led by the manager. Content = Mayaga's own facts (from Mary). Photos: put new files in images/new/ (see PHOTOS below). */
-:root{--olive:#37482f;--olive2:#2c3a26;--cream:#f8e8c5;--paper:#fbf3de;--ink:#443e2b;--gold:#cfa65a;--out:cubic-bezier(.22,1,.36,1)}
+/* =====================================================================
+   DESIGN REFERENCE (copied section by section, Nov 2026):
+   Schlosshotel Kitzbühel, schlosshotel-kitzbuehel.com (Awwwards, hotel-restaurant category).
+   Read live: body bg rgb(48,3,22) #300316, card/request bg rgb(66,4,30) #42041e, white text,
+   headings "dashiell-text" (paid Adobe font) -> Cormorant Garamond 500 (OFL, same high-contrast
+   old-style serif), body "Assistant" 16px/1.56 (OFL, used as-is), labels 600 uppercase
+   letter-spacing 1.76px. Modules copied: Header (lang + phone / centred lockup / burger, then a
+   solid bar with BOOK + ENQUIRE buttons), Hero + round badge, TextPicV2, RoomsTeaser (image
+   aspect 1.1428, 40% black overlay, title 4em + price 2em, CTA reveals on hover), Quotes,
+   OffersTeaser, HorizontalTextSlider, FeatureHighlight (counter 01/04), Banner, ImageCollage, Footer.
+   Refero Styles direction: "Intercom / ElevenLabs warm cream editorial" (cream paper on the
+   booking panel) + "Steep serif on warm paper" (serif-led hierarchy).
+   FACTS: Mary's notes, 6 Nov 2026. TO CONFIRM: street address (Tono Road vs Tumu Road).
+   PHOTOS: drop files into images/ with the names in data-img; until then a "photo coming soon"
+   panel shows. Old photos are not used.
+   ===================================================================== */
+@font-face{font-family:"Cormorant";src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Cormorant";src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Assistant";src:url(fonts/assistant-400.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Assistant";src:url(fonts/assistant-600.ttf) format("truetype");font-weight:600;font-display:swap}
+:root{--bg:#300316;--bg2:#42041e;--bg3:#24020f;--w:#fff;--mute:rgba(255,255,255,.72);--line:rgba(255,255,255,.28);--paper:#f6efe6;--ink:#300316;--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--olive);color:var(--cream);font:700 14px/1.6 Arial,Helvetica,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--w);font:400 16px/1.56 Assistant,"Segoe UI",Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}
-.serif{font-family:Playfair,Georgia,serif;font-weight:400}
-.tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold)}
-.w{width:min(1280px,100% - 2*clamp(20px,5vw,72px));margin:0 auto}
-.btn{display:inline-flex;align-items:center;gap:12px;background:var(--cream);color:var(--olive);border-radius:999px;padding:16px 28px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;transition:transform .5s var(--out),background .3s}
-.btn:hover{transform:translateY(-2px);background:#fff}
-.btn.line{background:transparent;color:var(--cream);border:1px solid rgba(248,232,197,.5)}
-.btn.line:hover{background:rgba(248,232,197,.1)}
-.btn.ink{background:var(--olive);color:var(--cream)}.btn.ink:hover{background:var(--olive2)}
+.serif{font-family:Cormorant,Georgia,serif;font-weight:500;line-height:1.2}
+.lbl{font-size:10px;font-weight:600;letter-spacing:1.76px;text-transform:uppercase;line-height:1.2}
+.wrap{width:min(1360px,100% - 2*clamp(20px,5vw,80px));margin:0 auto}
+:focus-visible{outline:2px solid #fff;outline-offset:3px}
+/* buttons, from .MOD-RoomsTeaser__item__request__wrap */
+.b{min-height:45px;min-width:120px;padding:0 25px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid #fff;background:transparent;color:#fff;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;cursor:pointer;user-select:none;transition:background-color .25s ease,color .25s ease}
+.b:hover{background:#fff;color:var(--bg)}
+.b.fill{background:#fff;color:var(--bg)}.b.fill:hover{background:transparent;color:#fff}
+.b.wine{background:var(--bg2);border-color:var(--bg2)}.b.wine:hover{background:#fff;color:var(--bg);border-color:#fff}
+.lnk{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:4px}
 
-/* photo slots: show the photo if the file exists, otherwise a quiet placeholder */
-.ph{position:relative;overflow:hidden;background:linear-gradient(140deg,#4a5d3f,#2f3f29);isolation:isolate}
-.ph::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(248,232,197,.05) 0 2px,transparent 2px 14px);z-index:-1}
-.ph i{position:absolute;inset:auto 14px 12px 14px;font:700 10px/1.3 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,232,197,.55);font-style:normal}
-.ph.on i{display:none}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.6s var(--out)}
-.rv.in .ph img,.ph.rv.in img,.in>.ph img{transform:scale(1)}
+/* photo slots */
+.slot{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,#5a0b2c 0,var(--bg2) 45%,var(--bg3) 100%)}
+.slot::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.16);pointer-events:none}
+.slot .soon{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;color:rgba(255,255,255,.62)}
+.slot .soon svg{width:34px;height:34px;opacity:.7}
+.slot .soon b{font:500 22px/1.2 Cormorant,Georgia,serif;color:rgba(255,255,255,.85)}
+.slot .soon code{font:600 10px/1.2 Assistant,sans-serif;letter-spacing:1.4px;text-transform:uppercase;opacity:.75}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 68%;opacity:0;transition:opacity .8s ease,transform 1.6s var(--ease)}
+.slot.on img{opacity:1}.slot.on .soon,.slot.on::after{display:none}
+.shade::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.4);transition:background-color .5s ease-out}
 
 /* header */
-header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s,padding .4s;padding:22px 0}
-header.solid{background:rgba(55,72,47,.94);backdrop-filter:blur(10px);padding:14px 0}
-header .w{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font-family:Playfair,Georgia,serif;font-weight:500;font-size:24px;letter-spacing:.02em}
-nav{display:flex;gap:34px;align-items:center}
-nav a{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .3s}
-nav a:hover{opacity:1;color:var(--gold)}
-.mb{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
-.mb i{display:block;width:26px;height:2px;background:var(--cream);margin:6px auto}
-.menu{position:fixed;inset:0;background:var(--olive);z-index:60;display:none;flex-direction:column;justify-content:center;padding:0 8vw;gap:20px}
-.menu.open{display:flex}.menu a{font:400 44px/1.1 Playfair,Georgia,serif}.menu .x{position:absolute;top:22px;right:20px;background:none;border:0;font-size:34px;cursor:pointer}
+.hd{position:fixed;inset:0 0 auto;z-index:50;height:72px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 clamp(16px,2.6vw,36px);transition:background-color .4s ease,height .4s var(--ease)}
+.hd .l{display:flex;align-items:center;gap:18px}.hd .r{justify-self:end}
+.hd .mono{width:38px;height:38px;opacity:0;transition:opacity .3s}
+.hd .tel{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:1.6px}
+.hd .tel svg{width:18px;height:18px}
+.hd .act{display:none;gap:8px}.hd .act .b{min-height:34px;min-width:0;padding:0 16px;font-size:10px}
+.burger{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;cursor:pointer}
+.burger i{display:block;width:26px;height:1.5px;background:#fff;box-shadow:0 -8px 0 #fff,0 8px 0 #fff}
+.hd.solid{background:var(--bg);height:60px}
+.hd.solid .mono{opacity:1}.hd.solid .act{display:flex}.hd.solid .tel{display:none}
+@media(max-width:600px){.hd.solid .act .b.out{display:none}}
+
+/* menu overlay */
+.menu{position:fixed;inset:0;z-index:60;background:var(--bg);display:grid;grid-template-columns:1fr 1fr;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.menu.open{opacity:1;visibility:visible}
+.menu nav{padding:110px clamp(24px,6vw,96px) 40px;display:flex;flex-direction:column;gap:8px;overflow:auto}
+.menu nav a{font:500 clamp(30px,3.6vw,48px)/1.2 Cormorant,Georgia,serif;transform:translateY(16px);opacity:0;transition:transform .7s var(--ease),opacity .7s}
+.menu.open nav a{transform:none;opacity:1}
+.menu nav a:nth-child(2){transition-delay:.04s}.menu nav a:nth-child(3){transition-delay:.08s}.menu nav a:nth-child(4){transition-delay:.12s}.menu nav a:nth-child(5){transition-delay:.16s}.menu nav a:nth-child(6){transition-delay:.2s}
+.menu nav a:hover{font-style:italic}
+.menu .side{position:relative}
+.menu .close{position:absolute;top:14px;right:clamp(16px,2.6vw,36px);z-index:2;width:44px;height:44px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
+.menu .info{position:absolute;left:clamp(24px,6vw,96px);bottom:40px;color:var(--mute);font-size:14px}
+@media(max-width:820px){.menu{grid-template-columns:1fr}.menu .side .slot{display:none}}
 
 /* hero */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:140px 0 64px;overflow:hidden}
-.hero .ph{position:absolute;inset:0}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,46,30,.35) 0%,rgba(35,46,30,.1) 40%,rgba(35,46,30,.86) 100%);z-index:1}
-.hero .w{position:relative;z-index:2}
-.hero h1{font:400 clamp(64px,11vw,168px)/.92 Playfair,Georgia,serif;letter-spacing:-.02em;margin:22px 0 26px}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.92;margin-bottom:34px}
-.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero{position:relative;height:100vh;height:100svh;min-height:560px}
+.hero .slot{position:absolute;inset:0}
+.hero .slot::after{display:none}
+.hero .slot .soon{justify-content:flex-end;padding-bottom:clamp(90px,14vh,140px)}
+.hero .lock{position:absolute;z-index:2;left:50%;top:clamp(84px,14vh,130px);transform:translateX(-50%);text-align:center;width:max-content;max-width:90vw}
+.hero .lock svg{width:64px;height:64px;margin:0 auto 14px}
+.hero .lock h1{font:500 clamp(34px,3.2vw,46px)/1.05 Cormorant,Georgia,serif}
+.hero .lock p{margin-top:12px}
+.badge{position:absolute;z-index:3;left:clamp(16px,3vw,44px);bottom:clamp(20px,5vh,44px);width:172px;height:172px;border-radius:50%;background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .5s var(--ease)}
+.badge:hover{transform:scale(1.04)}
+.badge b{font:500 20px/1.1 Cormorant,Georgia,serif}.badge span{font-size:11px;line-height:1.35;margin-top:8px}
+.hero .cue{position:absolute;z-index:2;left:50%;bottom:28px;transform:translateX(-50%);width:1px;height:56px;background:linear-gradient(#fff,transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.25}50%{opacity:1}}
+@media(max-width:600px){.hero .slot .soon{justify-content:center;padding:120px 24px 0}.collage .soon code,.collage .soon b{display:none}.badge{width:132px;height:132px;padding:14px}.badge b{font-size:16px}.badge span{font-size:10px}}
 
-/* cream paper */
-.paper{background:var(--cream);color:var(--ink)}
-.paper .tag{color:#8a6a2c}
-.intro{padding:clamp(80px,11vw,150px) 0}
-.intro .g{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(40px,8vw,120px);align-items:start}
-.intro h2{font:400 clamp(34px,4.6vw,66px)/1.12 Playfair,Georgia,serif;margin-top:22px}
-.intro h2 em{font-style:italic}
-.intro p.l{font-size:13px;line-height:1.75;margin-top:30px;max-width:520px;text-transform:uppercase;letter-spacing:.02em}
-.who{border-top:1px solid rgba(68,62,43,.35);padding-top:20px}
-.who ul{list-style:none;margin-top:16px}
-.who li{font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:16px 0;border-bottom:1px solid rgba(68,62,43,.2)}
+section{position:relative}
+.pad{padding:clamp(80px,11vw,160px) 0}
 
-/* features: big capitals + photos */
-.feat{background:var(--olive);padding:clamp(80px,10vw,140px) 0}
-.feat h2{font:400 clamp(34px,4.6vw,66px)/1.1 Playfair,Georgia,serif;margin:18px 0 clamp(40px,6vw,80px);max-width:900px}
-.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px)}
-.fc .ph{aspect-ratio:4/5}
-.fc h3{font:400 clamp(20px,2vw,28px)/1.2 Playfair,Georgia,serif;text-transform:uppercase;margin-top:20px;letter-spacing:.01em}
-.fc p{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-top:8px;font-weight:700}
+/* TextPicV2 */
+.tp{display:grid;grid-template-columns:5fr 4fr;gap:clamp(30px,6vw,110px);align-items:start}
+.tp .big{aspect-ratio:1.1428}
+.tp .txt{padding-top:clamp(0px,6vw,90px);max-width:470px}
+.tp h2{font-size:clamp(30px,3vw,40px);margin:16px 0 26px}
+.tp p{color:var(--mute)}.tp p+p{margin-top:16px}
+.tp .lnk{display:inline-block;margin-top:34px}
+.tp .small{width:62%;aspect-ratio:.8;margin:clamp(40px,7vw,110px) 0 0 auto}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line)}
+.facts div{padding:18px 12px 0 0}.facts b{display:block;font:500 40px/1 Cormorant,Georgia,serif}.facts span{font-size:12px;color:var(--mute)}
+@media(max-width:900px){.tp{grid-template-columns:1fr}.tp .small{display:none}.tp .txt{padding-top:0}}
 
-/* rooms (rental formats) */
-.rooms{padding:clamp(80px,10vw,140px) 0}
-.rooms .head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,80px)}
-.rooms h2{font:400 clamp(34px,4.6vw,66px)/1.1 Playfair,Georgia,serif;margin-top:18px}
-.rooms .note{max-width:380px;font-size:12px;line-height:1.7;text-transform:uppercase;letter-spacing:.04em}
-.room{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,96px);align-items:center;padding:clamp(34px,5vw,64px) 0;border-top:1px solid rgba(68,62,43,.3)}
-.room:nth-child(even) .ph{order:2}
-.room .ph{aspect-ratio:5/4}
-.room h3{font:400 clamp(40px,5.4vw,78px)/1 Playfair,Georgia,serif}
-.room dl{margin:26px 0 30px}
-.room dl div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid rgba(68,62,43,.2);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-.room dd{text-align:right}
-.room .price{font:400 28px/1 Playfair,Georgia,serif;text-transform:none;letter-spacing:0}
+/* RoomsTeaser */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(30px,4vw,56px)}
+.sh h2{font-size:clamp(30px,3vw,40px)}
+.rooms{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 30px)/2);gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.rooms::-webkit-scrollbar{display:none}
+.room{scroll-snap-align:start;position:relative;display:flex;flex-direction:column}
+.room .slot{aspect-ratio:1.1428}
+.room .slot .soon{justify-content:flex-start;padding-top:12%}
+.room .ct{position:absolute;inset:0;z-index:2;padding:40px 50px;display:flex;align-items:flex-end;justify-content:space-between;gap:25px}
+.room h3{font:500 40px/1.2 Cormorant,Georgia,serif}
+.room .pr{margin-top:5px;font-size:20px}.room .pr b{font-weight:600}.room .pr small{font-size:13px;opacity:.8}
+.room .feat{margin-top:10px;font-size:13px;color:var(--mute);max-width:420px}
+.room .cta{display:flex;gap:16px;margin-top:20px;max-height:60px;overflow:hidden;transition:margin-top .25s,max-height .25s,opacity .25s}
+@media(min-width:1025px) and (hover:hover){.room:not(:hover):not(:focus-within) .cta{margin-top:0;max-height:0;opacity:0}.room:hover .shade::before{background:rgba(0,0,0,.55)}.room:hover .slot.on img{transform:scale(1.04)}}
+.arrows{display:flex;gap:10px}.arrows button{width:48px;height:48px;border:1px solid var(--line);background:none;color:#fff;cursor:pointer;font-size:18px;transition:background .25s}.arrows button:hover{background:rgba(255,255,255,.1)}
+@media(max-width:1024px){.rooms{grid-auto-columns:78%}.room .ct{padding:28px}.room h3{font-size:32px}.room .pr{font-size:17px}}
+@media(max-width:600px){.rooms{grid-auto-columns:88%;gap:14px}.room .slot{aspect-ratio:.8}.room .ct{padding:22px 20px}.room h3{font-size:28px}}
 
-/* events (masia rental style) */
-.events{position:relative;padding:clamp(90px,12vw,170px) 0;overflow:hidden}
-.events .ph{position:absolute;inset:0;opacity:.5}
-.events::after{content:"";position:absolute;inset:0;background:rgba(44,58,38,.72)}
-.events .w{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,7vw,110px);align-items:end}
-.events h2{font:400 clamp(48px,7.4vw,112px)/.98 Playfair,Georgia,serif;margin-top:20px}
-.events h2 em{font-style:italic;color:var(--gold)}
-.events ul{list-style:none}
-.events li{padding:18px 0;border-bottom:1px solid rgba(248,232,197,.25);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.events .btn{margin-top:34px}
+/* Quotes */
+.quote{text-align:center;max-width:980px;margin:0 auto}
+.quote q{display:block;font:500 clamp(24px,2.6vw,36px)/1.35 Cormorant,Georgia,serif;quotes:"\201C" "\201D"}
+.quote .lbl{margin-top:26px}.quote small{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
 
-/* booking */
-.book{padding:clamp(80px,10vw,140px) 0}
-.book .g{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,7vw,110px);align-items:start}
-.book h2{font:400 clamp(36px,4.8vw,70px)/1.08 Playfair,Georgia,serif;margin-top:18px}
-.book p{font-size:12px;line-height:1.8;text-transform:uppercase;letter-spacing:.04em;margin-top:26px;max-width:420px}
+/* OffersTeaser */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.offer .slot{aspect-ratio:1.1428}
+.offer h3{font:500 28px/1.2 Cormorant,Georgia,serif;margin:24px 0 8px}
+.offer p{color:var(--mute);font-size:15px}
+.offer .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+@media(max-width:900px){.offers{grid-template-columns:1fr;gap:56px}}
+
+/* HorizontalTextSlider */
+.hts{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden}
+.hts .slot{position:absolute;inset:0}.hts .slot::after{display:none}
+.hts .slot .soon{justify-content:flex-end;padding-bottom:40px}
+.hts .track{position:relative;z-index:2;display:flex;gap:60px;white-space:nowrap;animation:mq 40s linear infinite;font:500 clamp(44px,6vw,92px)/1 Cormorant,Georgia,serif}
+.hts .track span{display:inline-flex;align-items:center;gap:60px}.hts .track span::after{content:"";width:10px;height:10px;border-radius:50%;background:#fff;opacity:.7}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* FeatureHighlight */
+.fh{display:grid;grid-template-columns:4fr 5fr;gap:clamp(30px,6vw,100px);align-items:end}
+.fh .left h2{font-size:clamp(30px,3vw,40px);margin:14px 0 30px}
+.fh .left .slot{aspect-ratio:1.25}
+.fh .right .slot{aspect-ratio:1.1428}
+.fh .txt{margin-top:30px;max-width:520px;color:var(--mute);min-height:110px}
+.fh .txt b{display:block;color:#fff;font:500 28px/1.2 Cormorant,Georgia,serif;margin-bottom:8px}
+.ctr{display:flex;align-items:center;gap:22px;margin-top:30px}
+.ctr .n{font:500 30px/1 Cormorant,Georgia,serif}.ctr .n i{font-style:normal;opacity:.5;font-size:20px}
+.fh .stage{position:relative}.fh .pane{display:none}.fh .pane.on{display:block;animation:fade .7s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(max-width:900px){.fh{grid-template-columns:1fr}.fh .left .stage{display:none}}
+
+/* Banner */
+.banner{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.banner .slot{aspect-ratio:1.1428;grid-column:2;grid-row:1}
+.banner .box{grid-column:1/span 1;grid-row:1;position:relative;z-index:2;background:var(--bg2);padding:clamp(34px,5vw,70px);margin-right:-12%}
+.banner h2{font-size:clamp(28px,2.8vw,40px);margin:14px 0 18px}.banner p{color:var(--mute)}
+.banner .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:900px){.banner{grid-template-columns:1fr}.banner .slot{grid-column:1;grid-row:1}.banner .box{grid-row:2;margin:-60px 16px 0}}
+
+/* ImageCollage */
+.collage{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.collage .slot:nth-child(1){grid-column:1/8;aspect-ratio:1.4}
+.collage .slot:nth-child(2){grid-column:9/13;aspect-ratio:.8;margin-top:120px}
+.collage .slot:nth-child(3){grid-column:3/7;aspect-ratio:.9}
+.collage .slot:nth-child(4){grid-column:7/12;aspect-ratio:1.25;margin-top:-80px}
+.collage .slot .cap{position:absolute;z-index:2;left:20px;bottom:18px}
+@media(max-width:700px){.collage{grid-template-columns:1fr 1fr;gap:12px}.collage .slot:nth-child(n){grid-column:auto;margin:0;aspect-ratio:.85}.collage .slot:nth-child(1){grid-column:1/3;aspect-ratio:1.3}}
+
+/* booking (cream paper panel) */
+.bk{background:var(--paper);color:var(--ink)}
+.bk .g{display:grid;grid-template-columns:4fr 5fr;gap:clamp(30px,6vw,100px)}
+.bk h2{font-size:clamp(30px,3vw,44px);margin:14px 0 20px}
+.bk p{color:#5d3a48}
+.rates{margin-top:30px;border-top:1px solid rgba(48,3,22,.2)}
+.rates div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(48,3,22,.2);font-size:15px}
+.rates b{font-weight:600;white-space:nowrap}
 form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
-label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8a6a2c;margin-bottom:8px}
-input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(68,62,43,.5);padding:12px 2px;font:700 15px Arial,sans-serif;color:var(--ink);border-radius:0;outline:0;transition:border-color .3s}
-input:focus,select:focus,textarea:focus{border-bottom-color:var(--ink)}
-.f2{grid-column:1/-1}
-textarea{resize:vertical;min-height:74px}
-form .btn{grid-column:1/-1;justify-self:start;margin-top:10px;border:0;cursor:pointer}
-.fine{grid-column:1/-1;font-size:11px;line-height:1.6;opacity:.7;text-transform:none;letter-spacing:0;margin:0!important;max-width:none!important}
-.ok{grid-column:1/-1;font-size:12px;color:#2f6d2b;min-height:18px}
+form label{display:flex;flex-direction:column;gap:8px;font-size:10px;font-weight:600;letter-spacing:1.76px;text-transform:uppercase}
+form .full{grid-column:1/3}
+input,select,textarea{width:100%;min-height:48px;border:0;border-bottom:1px solid rgba(48,3,22,.45);background:transparent;padding:8px 0;font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink);border-radius:0;-webkit-appearance:none;appearance:none}
+select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23300316' stroke-width='1.5'/%3E%3C/svg%3E") right 4px center no-repeat}
+textarea{min-height:80px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--ink);box-shadow:0 1px 0 var(--ink)}
+.bk .b{border-color:var(--ink);color:var(--ink)}.bk .b.fill{background:var(--ink);color:#fff}.bk .b.fill:hover{background:transparent;color:var(--ink)}
+.hint{font-size:13px;color:#7a5564;grid-column:1/3}
+#ok{grid-column:1/3;font-size:14px;min-height:20px}
+@media(max-width:900px){.bk .g{grid-template-columns:1fr}}
+@media(max-width:520px){form{grid-template-columns:1fr}form .full,.hint,#ok{grid-column:1}}
 
-/* find + closing */
-.find{padding:clamp(70px,9vw,120px) 0;background:var(--olive2)}
-.find .g{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,90px)}
-.find h2{font:400 clamp(34px,4.4vw,60px)/1.1 Playfair,Georgia,serif;margin:16px 0 28px}
-.find li{list-style:none;padding:14px 0;border-bottom:1px solid rgba(248,232,197,.22);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.find li span{opacity:.6;display:block;font-size:10px;letter-spacing:.14em;margin-bottom:3px}
-.map{border:0;width:100%;min-height:360px;height:100%;filter:grayscale(.3) sepia(.2)}
-.await{padding:clamp(100px,14vw,200px) 0 clamp(60px,8vw,100px);text-align:center}
-.await h2{font:400 clamp(56px,9.4vw,140px)/.98 Playfair,Georgia,serif}
-.await h2 em{font-style:italic;color:var(--gold)}
-.await p{max-width:560px;margin:34px auto 0;font-size:13px;line-height:1.8;text-transform:uppercase;letter-spacing:.04em}
-.await .who2{margin-top:30px;color:var(--gold);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.await .cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:40px}
-footer{padding:26px 0 40px;font-size:12px;color:var(--gold);letter-spacing:.06em}
-footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(207,166,90,.3);padding-top:22px}
-.fab{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 28px -8px rgba(0,0,0,.5)}
-.fab svg{width:30px;height:30px}
+/* footer */
+.ft{padding:clamp(70px,9vw,120px) 0 40px;text-align:center}
+.ft svg{width:58px;height:58px;margin:0 auto 18px}
+.ft .nm{font:500 34px/1.1 Cormorant,Georgia,serif}
+.ft .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:50px 0;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left}
+.ft .cols p,.ft .cols a{color:var(--mute);font-size:15px;display:block}.ft .cols a:hover{color:#fff}
+.ft .cols .lbl{margin-bottom:12px;color:#fff}
+.ft .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mute)}
+@media(max-width:700px){.ft .cols{grid-template-columns:1fr}}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(30px);transition:opacity 1.1s var(--out),transform 1.1s var(--out)}
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#1f7a4d;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .3s var(--ease)}
+.fab:hover{transform:scale(1.06)}.fab svg{width:28px;height:28px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1.1s var(--ease)}
 .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 
-@media (max-width:900px){
-  nav{display:none}.mb{display:block}
-  .intro .g,.book .g,.find .g,.events .w,.room{grid-template-columns:1fr}
-  .fg{grid-template-columns:1fr 1fr}
-  .room:nth-child(even) .ph{order:0}
-  form{grid-template-columns:1fr}
-}
-@media (max-width:560px){.fg{grid-template-columns:1fr}.hero{padding-top:120px}.hero .cta .btn{width:100%;justify-content:center}}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ph img{transform:none;transition:none}html{scroll-behavior:auto}}
+/* Room sections: Cottage / Executive / Standard */
+.rs .wrap{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
+.rs.flip .wrap{grid-template-columns:7fr 5fr}.rs.flip .rs-t{order:2}
+.rs-t h2{font-size:clamp(30px,3.2vw,46px);margin:14px 0 18px}
+.rs-t p{color:var(--mute);max-width:480px}
+.rs-t ul{list-style:none;margin:20px 0 28px;display:grid;gap:8px;max-width:480px}
+.rs-t li{padding-left:22px;position:relative;font-size:15px}
+.rs-t li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:#fff}
+.rs-t .row{display:flex;gap:12px;flex-wrap:wrap}
+.rs-g{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.rs-g .slot{aspect-ratio:3/4}.rs-g .slot.w{aspect-ratio:4/3;grid-column:span 6}
+.rs-g .slot{grid-column:span 2}.rs-g.two .slot{grid-column:span 3}
+.rs-g .slot img{object-position:50% 50%}
+@media(max-width:900px){.rs .wrap,.rs.flip .wrap{grid-template-columns:1fr}.rs.flip .rs-t{order:0}}
 </style>
 </head>
 <body>
 
-<header id="hd"><div class="w">
-  <a class="brand" href="#top">Hotel Mayaga</a>
-  <nav aria-label="Main"><a href="#rooms">Rooms</a><a href="#inside">Facilities</a><a href="#events">Events</a><a href="#find">Find us</a><a class="btn" href="#book" style="padding:12px 22px">Book</a></nav>
-  <button class="mb" id="mb" aria-label="Open menu"><i></i><i></i></button>
-</div></header>
-<div class="menu" id="menu" aria-hidden="true"><button class="x" id="mx" aria-label="Close menu">&times;</button><a href="#rooms">Rooms</a><a href="#inside">Facilities</a><a href="#events">Events</a><a href="#book">Book</a><a href="#find">Find us</a></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mono" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="32" cy="32" r="29"/><circle cx="32" cy="32" r="23" opacity=".55"/><path d="M19 43V22l13 15 13-15v21"/></g></symbol>
+  <symbol id="cam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.6"/></g></symbol>
+</svg>
+
+<header class="hd" id="hd">
+  <div class="l">
+    <a class="tel" href="tel:+233240591813" aria-label="Call Hotel Mayaga"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg><span>024 059 1813</span></a>
+    <div class="act"><a class="b fill" href="#book">Book</a><a class="b out" href="#" data-wa="ask">Enquire</a></div>
+  </div>
+  <a href="#top" aria-label="Hotel Mayaga, back to top"><svg class="mono"><use href="#mono"/></svg></a>
+  <div class="r"><button class="burger" id="mb" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><i></i></button></div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Main">
+    <a href="#stay">The hotel</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#cottage">Cottage</a>
+    <a href="#executive">Executive</a>
+    <a href="#standard">Standard</a>
+    <a href="#good">Good to know</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#book">Book on WhatsApp</a>
+  </nav>
+  <div class="side">
+    <button class="close" id="mx" aria-label="Close menu">&times;</button>
+    <div class="slot shade" data-img="images/deco-1.jpg" style="position:absolute;inset:0"></div>
+    <div class="info">Navrongo, Upper East Region<br><a href="tel:+233240591813">024 059 1813</a></div>
+  </div>
+</div>
 
 <main id="top">
 <section class="hero">
-  <div class="ph" data-slot="hero"><i>Photo: hotel front or courtyard (hero.jpg)</i></div>
-  <div class="w">
-    <p class="tag">( Hotel in Navrongo )</p>
-    <h1>Hotel <em>Mayaga</em></h1>
-    <p class="meta"><span>35 rooms</span><span>On-site restaurant</span><span>2 conference halls</span><span>Courtyard for parties</span></p>
-    <div class="cta"><a class="btn" href="#book">Book your stay</a><a class="btn line" href="tel:+233240591813">Call 024 059 1813</a></div>
+  <div class="slot shade" data-img="images/room-cottage.jpg" data-label="Cottage House"></div>
+  <div class="lock">
+    <svg><use href="#mono"/></svg>
+    <h1>Hotel Mayaga</h1>
+    <p class="lbl">Navrongo &middot; Upper East Region</p>
   </div>
+  <a class="badge" href="#rooms"><b>Breakfast with every Executive room</b><span>Air-conditioned rooms</span></a>
+  <span class="cue" aria-hidden="true"></span>
 </section>
 
-<section class="paper intro" id="welcome">
-  <div class="w g">
+<section class="pad" id="stay">
+  <div class="wrap tp">
     <div class="rv">
-      <p class="tag">( Welcome )</p>
-      <h2>Fan, air-conditioned, executive and suite rooms, with a <em>courtyard</em> to gather in.</h2>
-      <p class="l">Hotel Mayaga in Navrongo has 35 rooms, an on-site restaurant, two conference halls and a courtyard for parties. Wi-Fi, 24-hour security, parking and a generator come with every stay.</p>
+      <div class="slot big" data-img="images/cottage-living.jpg" data-label="Cottage House living room"></div>
     </div>
-    <div class="who rv" style="transition-delay:.12s">
-      <p class="tag">Who it is for</p>
-      <ul><li>Travellers and families visiting Navrongo</li><li>Business trips and conferences</li><li>Weddings, parties and celebrations</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="feat" id="inside">
-  <div class="w">
-    <p class="tag rv">( What is inside )</p>
-    <h2 class="rv">Everything on one compound.</h2>
-    <div class="fg">
-      <article class="fc rv"><div class="ph" data-slot="restaurant"><i>Photo: restaurant (restaurant.jpg)</i></div><h3>On-site restaurant</h3><p>Meals without leaving the hotel</p></article>
-      <article class="fc rv" style="transition-delay:.1s"><div class="ph" data-slot="conference"><i>Photo: conference hall (conference.jpg)</i></div><h3>Two conference halls</h3><p>For meetings, trainings and events</p></article>
-      <article class="fc rv" style="transition-delay:.2s"><div class="ph" data-slot="courtyard"><i>Photo: courtyard (courtyard.jpg)</i></div><h3>A courtyard for parties</h3><p>Space for celebrations</p></article>
-      <article class="fc rv"><div class="ph" data-slot="security"><i>Photo: gate or compound (security.jpg)</i></div><h3>24-hour security</h3><p>Rest easy, day and night</p></article>
-      <article class="fc rv" style="transition-delay:.1s"><div class="ph" data-slot="wifi"><i>Photo: reception or lounge (reception.jpg)</i></div><h3>Wi-Fi</h3><p>Stay connected</p></article>
-      <article class="fc rv" style="transition-delay:.2s"><div class="ph" data-slot="parking"><i>Photo: parking (parking.jpg)</i></div><h3>Parking and a generator</h3><p>Safe parking, backup power</p></article>
+    <div class="txt rv">
+      <p class="lbl">Hotel Mayaga, Navrongo</p>
+      <h2 class="serif">A room for every kind of stay in Navrongo.</h2>
+      <p>Thirty-five air-conditioned rooms, from the Cottage House with its own kitchen and dining table to Executive and Standard rooms.</p>
+      <p>Stay for business, a family visit or an event. There is a bar and lounge, a restaurant, two conference halls and a courtyard for parties, with Wi-Fi, a generator, parking and 24-hour security.</p>
+      <div class="facts">
+        <div><b>35</b><span>rooms in total</span></div>
+        <div><b>AC</b><span>in every room</span></div>
+        <div><b>2</b><span>conference halls</span></div>
+      </div>
+      <a class="lnk" href="#rooms">See the rooms</a>
     </div>
   </div>
 </section>
 
-<section class="paper rooms" id="rooms">
-  <div class="w">
-    <div class="head">
-      <div class="rv"><p class="tag">( Rooms )</p><h2>Choose your room.</h2></div>
-      <p class="note rv">35 rooms: 10 with fan and 25 air-conditioned. Queen, King and Twin beds. Breakfast is included in some rooms.</p>
+<section class="pad" id="rooms" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv">
+      <div><p class="lbl" style="margin-bottom:12px">Our rooms</p><h2 class="serif">For every guest. For you.</h2></div>
+      <div class="arrows"><button type="button" id="rp" aria-label="Previous room">&larr;</button><button type="button" id="rn" aria-label="Next room">&rarr;</button></div>
     </div>
-    <div id="roomlist"></div>
+    <div class="rooms" id="roomlist"></div>
   </div>
 </section>
 
-<section class="events" id="events">
-  <div class="ph" data-slot="events"><i>Photo: party or hall (events.jpg)</i></div>
-  <div class="w">
-    <div class="rv"><p class="tag">( Events and meetings )</p><h2>Gather at <em>Mayaga</em></h2></div>
-    <div class="rv" style="transition-delay:.12s">
-      <ul><li>Two conference halls</li><li>A courtyard for parties</li><li>On-site restaurant</li><li>Parking and a generator</li></ul>
-      <a class="btn" href="#book" data-topic="Event or conference">Ask about your event</a>
+<section class="pad rs" id="cottage">
+  <div class="wrap">
+    <div class="rs-t rv">
+      <p class="lbl">Cottage House / Suite</p>
+      <h2 class="serif">Your own cottage, with a kitchen.</h2>
+      <p>The most space we have: a bedroom, a sitting area and a small dining table, with its own kitchen and bathroom.</p>
+      <ul><li>Air conditioning</li><li>Kitchen</li><li>Bathroom</li><li>Small dining table</li><li>Television</li></ul>
+      <div class="row"><a class="b fill" href="#" data-wa="room:cottage">Inquire on WhatsApp</a></div>
+    </div>
+    <div class="rs-g rv">
+      <div class="slot shade w" data-img="images/room-cottage.jpg" data-label="Cottage House bedroom"></div>
+      <div class="slot shade" data-img="images/cottage-living.jpg" data-label="Cottage House living room"></div>
+      <div class="slot shade" data-img="images/cottage-dining.jpg" data-label="Cottage House dining area"></div>
+      <div class="slot shade" data-img="images/cottage-bath.jpg" data-label="Cottage House bathroom"></div>
     </div>
   </div>
 </section>
 
-<section class="paper book" id="book">
-  <div class="w g">
+<section class="pad rs flip" id="executive">
+  <div class="wrap">
+    <div class="rs-t rv">
+      <p class="lbl">Executive rooms</p>
+      <h2 class="serif">Executive, with breakfast.</h2>
+      <p>Comfortable air-conditioned rooms, with a twin bed or without. Breakfast is included in every Executive room.</p>
+      <ul><li>Air conditioning</li><li>Twin bed, or without the twin bed</li><li>Breakfast included</li></ul>
+      <div class="row"><a class="b fill" href="#" data-wa="room:exec-twin">Inquire: twin bed</a><a class="b" href="#" data-wa="room:exec">Inquire: without twin bed</a></div>
+    </div>
+    <div class="rs-g rv">
+      <div class="slot shade w" data-img="images/exec-2.jpg" data-label="Executive room"></div>
+      <div class="slot shade" data-img="images/room-executive.jpg" data-label="Executive room with twin bed"></div>
+      <div class="slot shade" data-img="images/exec-twin-2.jpg" data-label="Executive room with twin bed"></div>
+      <div class="slot shade" data-img="images/room-exec.jpg" data-label="Executive room"></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad rs" id="standard">
+  <div class="wrap">
+    <div class="rs-t rv">
+      <p class="lbl">Standard rooms</p>
+      <h2 class="serif">Standard, simple and cool.</h2>
+      <p>A clean, air-conditioned room for a good night's rest, for business or a family visit.</p>
+      <ul><li>Air conditioning</li><li>Wi-Fi, generator and 24-hour security</li></ul>
+      <div class="row"><a class="b fill" href="#" data-wa="room:standard">Inquire on WhatsApp</a></div>
+    </div>
+    <div class="rs-g rv">
+      <div class="slot shade" data-img="images/room-standard.jpg" data-label="Standard room"></div>
+      <div class="slot shade" data-img="images/standard-2.jpg" data-label="Standard room"></div>
+      <div class="slot shade" data-img="images/standard-3.jpg" data-label="Standard room"></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap quote rv">
+    <q>Thirty-five rooms in Navrongo, from a cottage with its own kitchen to comfortable air-conditioned rooms. Inquire on WhatsApp and we will confirm.</q>
+    <p class="lbl">Hotel Mayaga</p><small>Navrongo</small>
+  </div>
+</section>
+
+<section class="pad" id="good" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><div><p class="lbl" style="margin-bottom:12px">Good to know</p><h2 class="serif">Not everything is the same. Here is what is.</h2></div></div>
+    <div class="offers">
+      <article class="offer rv">
+        <div class="slot shade" data-img="images/exec-3.jpg" data-label="Executive room"></div>
+        <h3>Breakfast with Executive rooms</h3>
+        <p>Only the Executive rooms include breakfast, with a twin bed or without.</p>
+        <div class="row"><a class="b" href="#executive">See Executive rooms</a></div>
+      </article>
+      <article class="offer rv">
+        <div class="slot shade" data-img="images/standard-2.jpg" data-label="Standard room"></div>
+        <h3>Air conditioning in every room</h3>
+        <p>Every one of our rooms is air-conditioned, from Standard to the Cottage House.</p>
+        <div class="row"><a class="b" href="#" data-wa="ask">Inquire on WhatsApp</a></div>
+      </article>
+      <article class="offer rv">
+        <div class="slot shade" data-img="images/cottage-dining.jpg" data-label="Cottage House dining area"></div>
+        <h3>A cottage with its own kitchen</h3>
+        <p>The Cottage House has a kitchen, a bathroom, a small dining table and a television.</p>
+        <div class="row"><a class="b" href="#cottage">See the Cottage House</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="hts" aria-label="Services">
+  <div class="slot shade" data-img="images/deco-2.jpg" data-label="Decor"></div>
+  <div class="track" aria-hidden="true"><span>Wi-Fi</span><span>Bar &amp; lounge</span><span>Restaurant</span><span>24-hour security</span><span>Generator</span><span>Parking</span><span>Wi-Fi</span><span>Bar &amp; lounge</span><span>Restaurant</span><span>24-hour security</span><span>Generator</span><span>Parking</span></div>
+</section>
+
+<section class="pad" id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><div><p class="lbl" style="margin-bottom:12px">Gallery</p><h2 class="serif">A look around.</h2></div></div>
+    <div class="collage">
+      <div class="slot shade rv" data-img="images/cottage-living.jpg" data-label="Cottage House"><span class="cap lbl">Cottage House</span></div>
+      <div class="slot shade rv" data-img="images/deco-1.jpg" data-label="Decor"><span class="cap lbl">Decor</span></div>
+      <div class="slot shade rv" data-img="images/standard-3.jpg" data-label="Standard room"><span class="cap lbl">Standard room</span></div>
+      <div class="slot shade rv" data-img="images/exec-2.jpg" data-label="Executive room"><span class="cap lbl">Executive room</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bk pad" id="book">
+  <div class="wrap g">
     <div class="rv">
-      <p class="tag">( Book your stay )</p>
-      <h2>Tell us your dates. We reply on WhatsApp.</h2>
-      <p>We confirm the room and the rate in the chat. You can pay by Mobile Money in the same conversation once we confirm.</p>
+      <p class="lbl">Book your stay</p>
+      <h2 class="serif">Book on WhatsApp.</h2>
+      <p>Pick a room, your dates and the number of guests. WhatsApp opens with your message ready; nothing is sent until you tap send. We confirm the room and how to pay.</p>
     </div>
-    <form id="bf" class="rv" style="transition-delay:.12s" novalidate>
-      <div class="f2"><label for="room">Room</label><select id="room"></select></div>
-      <div><label for="in">Check-in</label><input id="in" type="date"></div>
-      <div><label for="out">Check-out</label><input id="out" type="date"></div>
-      <div><label for="gu">Guests</label><select id="gu"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option></select></div>
-      <div><label for="nm">Your name</label><input id="nm" autocomplete="name" placeholder="Full name"></div>
-      <div class="f2"><label for="ph">Phone</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="024 000 0000"></div>
-      <div class="f2"><label for="nt">Anything we should know</label><textarea id="nt" placeholder="Early arrival, extra bed, event details..."></textarea></div>
-      <button class="btn ink" type="submit">Send on WhatsApp <span>&rarr;</span></button>
-      <p class="ok" id="ok" role="status"></p>
-      <p class="fine">Opens WhatsApp with your request to Hotel Mayaga. Nothing is charged until we confirm your room.</p>
+    <form id="bf" class="rv" novalidate>
+      <label class="full">Room<select id="room"></select></label>
+      <label>Check-in<input type="date" id="in"></label>
+      <label>Check-out<input type="date" id="out"></label>
+      <label>Guests<select id="gu"><option>1</option><option>2</option><option>3</option><option>4</option><option value="5+">5 or more</option></select></label>
+      <label>Your name<input id="nm" autocomplete="name" maxlength="80"></label>
+      <label class="full">Your phone<input id="ph" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="024 000 0000"></label>
+      <label class="full">Note (optional)<textarea id="nt" maxlength="400"></textarea></label>
+      <p class="hint">Only Executive rooms include breakfast. Ask us for rates on WhatsApp.</p>
+      <div class="full" style="display:flex;gap:12px;flex-wrap:wrap"><button class="b fill" type="submit">Send on WhatsApp</button><a class="b" href="tel:+233240591813">Call 024 059 1813</a></div>
+      <p id="ok" role="status" aria-live="polite"></p>
     </form>
-  </div>
-</section>
-
-<section class="find" id="find">
-  <div class="w g">
-    <div class="rv">
-      <p class="tag">( Find us )</p>
-      <h2>Tono Road, Navrongo</h2>
-      <ul>
-        <li><span>Phone and WhatsApp</span><a href="tel:+233240591813">024 059 1813</a></li>
-        <li><span>Address</span>Tono Road, Navrongo, Upper East Region</li>
-        <li><span>Front desk</span>Call any time, security on site 24 hours</li>
-      </ul>
-    </div>
-    <iframe class="map rv" title="Map showing Hotel Mayaga in Navrongo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Hotel+Mayaga,+Navrongo,+Ghana&output=embed"></iframe>
-  </div>
-</section>
-
-<section class="await">
-  <div class="w">
-    <h2 class="rv">Hotel Mayaga <em>awaits you</em></h2>
-    <p class="rv">Come for a night, a conference or a celebration. Call or message us and we will find the right room for you.</p>
-    <p class="who2 rv">Mary, owner &middot; 024 059 1813</p>
-    <div class="cta rv"><a class="btn" id="waMain" href="#book">Book on WhatsApp</a><a class="btn line" href="tel:+233240591813">Call us</a></div>
   </div>
 </section>
 </main>
 
-<footer><div class="w"><span>Hotel Mayaga &copy; 2026</span><span>Navrongo &middot; Upper East Region</span><span>Website preview</span></div></footer>
+<footer class="ft">
+  <div class="wrap">
+    <svg><use href="#mono"/></svg>
+    <p class="nm">Hotel Mayaga</p>
+    <p class="lbl" style="margin-top:10px">Navrongo &middot; Upper East Region</p>
+    <div class="cols">
+      <div><p class="lbl">Find us</p><p id="addr"></p></div>
+      <div><p class="lbl">Call or WhatsApp</p><a href="tel:+233240591813">024 059 1813</a><a href="#" data-wa="ask">Chat on WhatsApp</a></div>
+      <div><p class="lbl">At the hotel</p><p>35 rooms &middot; bar &amp; lounge &middot; restaurant &middot; 2 conference halls &middot; courtyard &middot; Wi-Fi &middot; generator &middot; parking &middot; 24-hour security</p></div>
+    </div>
+    <div class="base"><span>&copy; <span id="yr"></span> Hotel Mayaga, Navrongo</span><span>Demo website by Halyard</span></div>
+  </div>
+</footer>
 
-<a class="fab" id="fab" href="#" aria-label="WhatsApp Hotel Mayaga" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M16 3.2C8.9 3.2 3.2 8.9 3.2 16c0 2.4.7 4.7 1.9 6.7L3.2 28.8l6.3-1.9c1.9 1.1 4.1 1.7 6.5 1.7 7.1 0 12.8-5.7 12.8-12.8S23.1 3.2 16 3.2z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M11.6 9.6c.3 0 .6 0 .8.5l1.2 2.8c.1.3.1.6-.1.8l-.8 1c-.2.2-.2.5 0 .8.9 1.6 2.2 2.9 3.8 3.8.3.2.6.1.8-.1l1-1.2c.2-.3.5-.3.8-.2l2.7 1.3c.3.1.5.4.5.7 0 1.5-1.2 2.9-2.9 2.9-4.9-.4-9.2-4.7-9.6-9.6 0-1.7 1.4-2.9 2.8-3.5z" fill="#fff"/></svg></a>
+<a class="fab" id="fab" href="#" data-wa="ask" aria-label="Chat with Hotel Mayaga on WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3"/></svg></a>
 
 <script>
-/* ===== EDIT HERE: facts, rates, photos =====
-   rate: price per night in cedis (number) once Mary confirms; null shows "Ask us".
-   PHOTOS: put files in images/new/ named as the data-slot / the file names in the grey boxes:
-   hero, restaurant, conference, courtyard, security, reception, parking, events, standard-fan, standard-ac, executive, suite (.jpg). */
-var HOTEL={name:'Hotel Mayaga',wa:'233240591813',phone:'024 059 1813',api:''};
+/* ---------- CONFIG (edit here) ---------- */
+var HOTEL={
+  name:'Hotel Mayaga',
+  wa:'233240591813',            // wa.me number, no + or spaces
+  phone:'024 059 1813',
+  address:'Navrongo, Upper East Region', // TO CONFIRM with the owner: Tono Road or Tumu Road
+  api:''                        // Phase 3: '/api/booking' saves the request for the dashboard
+};
+/* Rooms: no prices on the site; guests inquire on WhatsApp. All rooms are air-conditioned. */
 var ROOMS=[
-  {id:'standard-fan',name:'Standard, fan',cooling:'Fan',blurb:'A simple, comfortable room with a fan.',rate:null},
-  {id:'standard-ac',name:'Standard, air-conditioned',cooling:'Air-conditioning',blurb:'A comfortable room with air-conditioning.',rate:null},
-  {id:'executive',name:'Executive',cooling:'',blurb:'A more spacious room for a more comfortable stay.',rate:null},
-  {id:'suite',name:'Suite',cooling:'',blurb:'Chamber-and-hall style suite with a separate sitting area.',rate:null}
+  {id:'cottage',name:'Cottage House / Suite',img:'images/room-cottage.jpg',feat:'Air conditioning, kitchen, bathroom, small dining table and television.'},
+  {id:'exec-twin',name:'Executive, twin bed',img:'images/room-executive.jpg',feat:'Air conditioning and a twin bed. Breakfast included.'},
+  {id:'exec',name:'Executive',img:'images/room-exec.jpg',feat:'Air conditioning, without the twin bed. Breakfast included.'},
+  {id:'standard',name:'Standard',img:'images/room-standard.jpg',feat:'Air conditioning.'}
 ];
+/* ---------------------------------------- */
 (function(){
-  var $=function(i){return document.getElementById(i)};
-  // header + menu
-  var hd=$('hd');function sc(){hd.classList.toggle('solid',scrollY>40)}sc();addEventListener('scroll',sc,{passive:true});
-  var menu=$('menu');function om(){menu.classList.add('open');menu.setAttribute('aria-hidden','false')}function cm(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true')}
-  $('mb').onclick=om;$('mx').onclick=cm;menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cm)});
-  // rooms
-  var list=$('roomlist'),sel=$('room'),h='';
-  ROOMS.forEach(function(r,i){
-    var rate=r.rate?'<span class="price">GH&#8373;'+Number(r.rate).toLocaleString('en-GH')+' <small style="font:700 11px Arial">per night</small></span>':'<span>Ask us for tonight’s rate</span>';
-    h+='<article class="room rv"><div class="ph" data-slot="'+r.id+'"><i>Photo: '+r.name+' ('+r.id+'.jpg)</i></div><div><p class="tag">0'+(i+1)+'</p><h3>'+r.name+'</h3><dl>'+
-      (r.cooling?'<div><dt>Cooling</dt><dd>'+r.cooling+'</dd></div>':'')+'<div><dt>Beds</dt><dd>Queen, King or Twin</dd></div><div><dt>Breakfast</dt><dd>Included in some rooms</dd></div><div><dt>Rate</dt><dd>'+rate+'</dd></div></dl>'+
-      '<p style="font-size:12px;line-height:1.7;text-transform:uppercase;letter-spacing:.04em;margin-bottom:26px">'+r.blurb+'</p><a class="btn ink" href="#book" data-room="'+r.id+'">Book this room</a></div></article>';
-    sel.insertAdjacentHTML('beforeend','<option value="'+r.id+'">'+r.name+'</option>');
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function money(n){return 'GH&#8373;'+Number(n).toLocaleString('en-GH')}
+  function slot(img,label,extra){return '<div class="slot shade'+(extra||'')+'" data-img="'+img+'" data-label="'+esc(label)+'"></div>'}
+
+  $('addr').textContent=HOTEL.address;$('yr').textContent=new Date().getFullYear();
+
+  // rooms slider + rate list + picker
+  var h='',sel=$('room');
+  ROOMS.forEach(function(r){
+    h+='<article class="room rv">'+slot(r.img,r.name)+'<div class="ct"><div><h3>'+esc(r.name)+'</h3><p class="feat">'+esc(r.feat)+'</p>'+
+       '<div class="cta"><a class="b fill" href="#book" data-room="'+r.id+'">Book</a><a class="b" href="#" data-wa="room:'+r.id+'">Inquire on WhatsApp</a></div></div></div></article>';
+    sel.insertAdjacentHTML('beforeend','<option value="'+r.id+'">'+esc(r.name)+'</option>');
   });
-  sel.insertAdjacentHTML('beforeend','<option value="any">Not sure yet, advise me</option>');
-  list.innerHTML=h;
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-room],a[data-topic]');if(!a)return;if(a.dataset.room)sel.value=a.dataset.room;if(a.dataset.topic){$('nt').value=a.dataset.topic+': '}});
-  // photo slots: use the file if it exists
-  document.querySelectorAll('.ph[data-slot]').forEach(function(box){
-    var im=new Image();im.alt='';im.loading='lazy';im.onload=function(){box.appendChild(im);box.classList.add('on')};im.src='images/new/'+box.dataset.slot+'.jpg';
+  sel.insertAdjacentHTML('beforeend','<option value="any">Not sure yet, please advise</option>');
+  $('roomlist').innerHTML=h;
+  var rlst=$('roomlist');
+  function step(d){var c=rlst.querySelector('.room');rlst.scrollBy({left:d*(c?c.offsetWidth+30:400),behavior:'smooth'})}
+  $('rp').onclick=function(){step(-1)};$('rn').onclick=function(){step(1)};
+
+  // photo slots: show the file once it exists, otherwise the "photo coming soon" panel
+  document.querySelectorAll('.slot[data-img]').forEach(function(box){
+    var label=box.getAttribute('data-label')||'';
+    
+    var im=new Image();im.alt=label;im.decoding='async';
+    im.onload=function(){requestAnimationFrame(function(){box.classList.add('on')})};
+    im.onerror=function(){box.remove()};
+    box.appendChild(im);
+    im.src=box.dataset.img;
   });
+
+  // header, menu
+  var hd=$('hd');function sc(){hd.classList.toggle('solid',scrollY>window.innerHeight*.6)}sc();addEventListener('scroll',sc,{passive:true});
+  var menu=$('menu'),mb=$('mb');
+  function om(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+  function cm(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');mb.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+  mb.onclick=om;$('mx').onclick=cm;menu.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',cm)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')cm()});
+
   // reveals
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  // dates
-  var t=new Date().toISOString().slice(0,10);$('in').min=t;$('out').min=t;
-  $('in').addEventListener('change',function(){if($('in').value){$('out').min=$('in').value;if($('out').value&&$('out').value<$('in').value)$('out').value=''}});
-  // booking -> WhatsApp (api hook for the dashboard comes later)
-  var fmt=function(v){if(!v)return'';var d=new Date(v+'T12:00:00');return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'})};
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})}else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+
+  // WhatsApp
   function link(msg){return 'https://wa.me/'+HOTEL.wa+'?text='+encodeURIComponent(msg)}
-  $('fab').href=link('Hello Hotel Mayaga, I would like to ask about a room.');$('waMain').addEventListener('click',function(e){e.preventDefault();window.open(link('Hello Hotel Mayaga, I would like to book a room.'),'_blank','noopener')});
+  var MSG={ask:'Hello Hotel Mayaga, I would like to ask about a room.',bar:'Hello Hotel Mayaga, I would like to ask about the bar and lounge.',
+    hall:'Hello Hotel Mayaga, I would like a quote for a conference hall. Date: ... Number of people: ...',event:'Hello Hotel Mayaga, I would like to plan an event in the courtyard. Date: ... Number of guests: ...'};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-wa],[data-room]');if(!a)return;
+    if(a.dataset.room){sel.value=a.dataset.room;return}
+    e.preventDefault();var k=a.dataset.wa,m=MSG[k];
+    if(k.indexOf('room:')===0){var r=ROOMS.filter(function(x){return 'room:'+x.id===k})[0];m='Hello Hotel Mayaga, I would like to inquire about the '+r.name+'. What is the rate?'}
+    window.open(link(m),'_blank','noopener');
+  });
+
+  // dates
+  var t=new Date();t=new Date(t.getTime()-t.getTimezoneOffset()*6e4).toISOString().slice(0,10);$('in').min=t;$('out').min=t;
+  $('in').addEventListener('change',function(){if($('in').value){$('out').min=$('in').value;if($('out').value&&$('out').value<=$('in').value)$('out').value=''}});
+  var fmt=function(v){if(!v)return'';var d=new Date(v+'T12:00:00');return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'})};
+
   $('bf').addEventListener('submit',function(e){
     e.preventDefault();var ok=$('ok');ok.style.color='#2f6d2b';
-    var name=$('nm').value.trim(),phone=$('ph').value.trim();
+    var name=$('nm').value.trim(),phone=$('ph').value.trim(),ci=$('in').value,co=$('out').value;
     if(!name||!phone){ok.style.color='#9b2c2c';ok.textContent='Please add your name and phone number.';return}
-    var r=ROOMS.filter(function(x){return x.id===sel.value})[0];
-    var lines=['Hello Hotel Mayaga, I would like to book a room.','Room: '+(r?r.name:'Not sure yet, please advise'),'Check-in: '+(fmt($('in').value)||'to be confirmed'),'Check-out: '+(fmt($('out').value)||'to be confirmed'),'Guests: '+$('gu').value,'Name: '+name,'Phone: '+phone];
+    if(ci&&co&&co<=ci){ok.style.color='#9b2c2c';ok.textContent='Check-out must be after check-in.';return}
+    var r=ROOMS.filter(function(x){return x.id===sel.value})[0],nights=(ci&&co)?Math.round((new Date(co)-new Date(ci))/864e5):0;
+    var lines=['Hello Hotel Mayaga, I would like to book a room.',
+      'Room: '+(r?r.name:'Not sure yet, please advise'),
+      'Check-in: '+(fmt(ci)||'to be confirmed'),'Check-out: '+(fmt(co)||'to be confirmed')+(nights?' ('+nights+' night'+(nights>1?'s':'')+')':''),
+      'Guests: '+$('gu').value,'Name: '+name,'Phone: '+phone];
     if($('nt').value.trim())lines.push('Note: '+$('nt').value.trim());
-    if(HOTEL.api){try{fetch(HOTEL.api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({room:sel.value,checkin:$('in').value,checkout:$('out').value,guests:$('gu').value,name:name,phone:phone,note:$('nt').value})})}catch(x){}}
+    if(HOTEL.api){try{fetch(HOTEL.api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({room:sel.value,checkin:ci,checkout:co,guests:$('gu').value,name:name,phone:phone,note:$('nt').value})})}catch(x){}}
     window.open(link(lines.join('\n')),'_blank','noopener');
-    ok.textContent='WhatsApp should open now. If it does not, call us on '+HOTEL.phone+'.';
+    ok.textContent='WhatsApp should open with your message. Tap send to reach us. If it does not open, call '+HOTEL.phone+'.';
   });
 })();
 </script>
